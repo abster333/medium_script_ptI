@@ -21,7 +21,7 @@ async function init() {
      * we can apply different hours from our constants file => 4 HOURS OR 6 HOURS
      */
     const defi_array_of_objects = await get_all_defi_liquidty_pools(
-      //--pick a time frame --//
+      1
     );
     const path_and_loan_pools = [];
 

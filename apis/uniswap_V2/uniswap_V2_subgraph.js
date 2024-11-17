@@ -3,7 +3,8 @@ const axios = require('axios');
 async function uniswapSubgraph_V2_Api(query) {
   try {
 
-    const url = 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2';
+    const url = 'https://gateway.thegraph.com/api/ad1435e8721f29bb5c77715a690b9fca/subgraphs/id/A3Np3RQbaBA6oKJgiwDJeo5T3zrYfGHPWFYayMwtNDum';
+    //'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2';
     const { data } = await axios.post(url, query);
 
     return data.data;
