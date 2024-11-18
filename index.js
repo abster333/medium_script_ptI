@@ -16,7 +16,7 @@ const {
 } = require('./constants');
 
 async function init() {
-  console.log("RPC URL:", process.env.RPC_URL);
+  console.log("RPC URL:", process.env.INFURA_URL_VETTING_KEY);
 
   try {
     /**
@@ -42,6 +42,8 @@ async function init() {
       /**
        * find the loan pools associated to our path
        */
+      let cT = 0;
+      const mCT = 10;
       for (const {
         path,
         token_ids,
@@ -53,7 +55,11 @@ async function init() {
         );
      
         path_and_loan_pools.push({ path: path, loan_pools: loan_pools });
-       
+       cT++;
+       if(cT > mCT){
+        break;
+       }
+
       }
       console.log(path_and_loan_pools.length);
       await profitablity_checks(path_and_loan_pools);
