@@ -29,12 +29,12 @@ async function get_all_defi_liquidty_pools(time) {
       time
     );
 
-    const sushiswap = await build_sushiswap_USD_volume_and_transaction_object(
-      time
-    );
+    // const sushiswap = await build_sushiswap_USD_volume_and_transaction_object(
+    //   time
+    // );
 
-    if (uniswap_v3 && uniswap_v2 && sushiswap) {
-      return [...uniswap_v3, ...uniswap_v2, ...sushiswap];
+    if (uniswap_v3 && uniswap_v2 ) { //&& sushiswap
+      return [...uniswap_v3, ...uniswap_v2, ];//...sushiswap
     }
   } catch (error) {
     console.error(error);
@@ -69,19 +69,19 @@ async function get_loan_pool_for_token(tokenId, poolAddresses) {
         uniswap_v2_loan_pool_id
       );
     }
-    const sushi_swap_loan_pool_id =
-      await find_most_profitable_loan_pool_sushi_swap(
-        tokenId,
-        poolAddress1,
-        poolAddress2,
-        poolAddress3
-      );
+    // const sushi_swap_loan_pool_id =
+    //   await find_most_profitable_loan_pool_sushi_swap(
+    //     tokenId,
+    //     poolAddress1,
+    //     poolAddress2,
+    //     poolAddress3
+    //   );
 
-    if(sushi_swap_loan_pool_id) {
-      return await get_most_recent_swap_activity_sushiswap(
-        sushi_swap_loan_pool_id
-      );
-    }
+    // if(sushi_swap_loan_pool_id) {
+    //   return await get_most_recent_swap_activity_sushiswap(
+    //     sushi_swap_loan_pool_id
+    //   );
+    // }
 
 
   } catch (error) {

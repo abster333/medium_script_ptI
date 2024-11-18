@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+require('dotenv').config();
 const { produce_simple_exchange_paths } = require('./mapping_simple_paths');
 const {
   get_all_defi_liquidty_pools,
@@ -15,6 +16,8 @@ const {
 } = require('./constants');
 
 async function init() {
+  console.log("RPC URL:", process.env.RPC_URL);
+
   try {
     /**
      * we look for liqudity pools with the highest USD volume and transaction volume from one hour ago.

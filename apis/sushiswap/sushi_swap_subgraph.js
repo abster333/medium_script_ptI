@@ -8,7 +8,7 @@ const axios = require('axios');
 
 async function sushiswapSubgraph_Api(query) {
   try {
-    const url = 'https://gateway.thegraph.com/api/ad1435e8721f29bb5c77715a690b9fca/subgraphs/id/77jZ9KWeyi3CJ96zkkj5s1CojKPHt6XJKjLFzsDCd8Fd';
+    const url = 'https://gateway.thegraph.com/api/ad1435e8721f29bb5c77715a690b9fca/subgraphs/id/5gByjbCu558gLVwzvWiYD8JPQC8KLk6PSe9AVFy8LC69';
     //'https://api.thegraph.com/subgraphs/name/sushiswap/exchange';
     const { data } = await axios.post(url, query);
 
