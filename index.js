@@ -24,10 +24,10 @@ async function init() {
      * we can apply different hours from our constants file => 4 HOURS OR 6 HOURS
      */
     const defi_array_of_objects = await get_all_defi_liquidty_pools(
-      1
+      4
     );
     const path_and_loan_pools = [];
-
+    console.log("found paths: ",defi_array_of_objects.length)
     if (defi_array_of_objects) {
       const possible_profitable_paths = produce_simple_exchange_paths(
         defi_array_of_objects
@@ -61,7 +61,7 @@ async function init() {
        }
 
       }
-      console.log(path_and_loan_pools.length);
+      console.log("Profitable Paths: ",path_and_loan_pools.length);
       await profitablity_checks(path_and_loan_pools);
     }
   } catch (error) {
