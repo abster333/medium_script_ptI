@@ -27,7 +27,7 @@ async function profitablity_checks(mapped_paths) {
       final_path.profit_usd_onchain_check >
       MIN_PROFIT_TO_CONSIDER_FOR_ON_CHAIN_CALL
     ) {
-      proftibale_paths_to_stage_for_smart_contract.push(final_path);
+      proftibale_paths_to_stage_for_smart_contract. push(final_path);
     }
   }
   return proftibale_paths_to_stage_for_smart_contract;
